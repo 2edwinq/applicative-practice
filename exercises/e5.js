@@ -6,8 +6,16 @@ import { data } from "../data/data";
 
 export function getPlanetsWithMassValue(data, number) {
   // Your code goes here...
-  
-}
+  const planetMassValue = data.planets.filter(function(planet){
+      return planet.mass.massValue >= number;
+  });
+
+  const planetName = planetMassValue.map(function(planetName){
+    return planetName.name;
+  });
+    return planetName;
+  }
+
 
 
 

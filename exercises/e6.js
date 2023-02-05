@@ -6,6 +6,15 @@ import { data } from "../data/data";
 
 export function getAsteroidsDiscoveredAfterYear(data, year) {
   // Your code goes here...
+  const asteroidDiscovery = data.asteroids.filter(function(asteroid){
+    return asteroid.discoveryYear > year;
+  });
+
+  const asteroidName = asteroidDiscovery.map(function(aster){
+    return aster.name;
+  });
+
+  return asteroidName;
 }
 
 

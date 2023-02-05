@@ -6,7 +6,25 @@ import { data } from "../data/data";
 
 export function getGreatestDiscoveryYear(data) {
   // Your code goes here...
+  const yearDiscover = data.asteroids.map(function (asteroid) {
+    return asteroid.discoveryYear;
+  })
+
+  const results = yearDiscover.reduce((tally, val) => {
+    tally[val] = (tally[val] || 0) + 1;
+    return tally;
+  }, {})
+
+  let compare = 1;
+  for (let prop in results) {
+    if (results[prop] > compare) {
+      compare = results[prop]
+      return parseInt(prop)
+    }
+  }
 }
+
+
 
 
 

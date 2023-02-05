@@ -6,10 +6,11 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
+  const findMoon = data.planets.find(function(planet){
+    return planet.moons.includes(moonName);
+  });
+    return findMoon.name;
 }
-
-
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"
 // If the test has all tests passed, switch to the next exercise file
